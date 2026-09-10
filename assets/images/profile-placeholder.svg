@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
+<rect width="800" height="1000" fill="#15233a"/>
+<circle cx="400" cy="330" r="145" fill="#324667"/>
+<path d="M140 950c25-270 160-390 260-390s235 120 260 390" fill="#324667"/>
+<text x="400" y="850" fill="#8ea5d3" font-size="32" text-anchor="middle" font-family="Arial">YOUR PHOTO</text>
+</svg>

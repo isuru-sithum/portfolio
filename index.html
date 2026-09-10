@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isuru Sithum | Portfolio</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <!-- Basic Website Information -->
+<meta name="description" content="The personal portfolio of Isuru Sithum, a Computer Science undergraduate passionate about software development, technology and problem solving.">
+
+
+<!-- Open Graph Metadata -->
+<meta property="og:title" content="Isuru Sithum | CSE Portfolio">
+
+<meta
+  property="og:description"
+  content="Computer Science undergraduate passionate about building projects, learning new technologies and solving problems."
+>
+
+<meta property="og:type" content="website">
+
+<!-- Replace with your final GitHub Pages URL after publishing -->
+<meta property="og:url" content="https://isuru-sithum.github.io/">
+
+<meta
+  property="og:image"
+  content="https://isuru-sithum.github.io/assets/images/portfolio-preview.png"
+>
+
+
+<!-- Twitter / X Preview -->
+<meta name="twitter:card" content="summary_large_image">
+
+<meta
+  name="twitter:title"
+  content="Isuru Sithum | CSE Portfolio"
+>
+
+<meta
+  name="twitter:description"
+  content="Computer Science undergraduate passionate about technology and software development."
+>
+
+<meta
+  name="twitter:image"
+  content="https://yourusername.github.io/your-repository/assets/images/portfolio-preview.png"
+>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a href="#home" class="brand"><span>&lt;/&gt;</span> Isuru Sithum</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Hello, I'm</p>
+        <h1>Isuru <span>Sithum</span></h1>
+        <h2>Computer Science Undergraduate</h2>
+        <p class="hero-text">
+          I'm a passionate CSE student, always eager to learn, build and explore new
+          technologies. I enjoy turning ideas into functional solutions and constantly
+          look for opportunities to grow and make an impact.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Projects <span>↗</span></a>
+          <a href="assets/Isuru-Sithum-CV.pdf" class="btn btn-secondary" download>Download CV <span>⇩</span></a>
+        </div>
+
+        <div class="socials">
+          <!-- Replace # with your own links -->
+          <a href="https://github.com/Isuru-Sithum" aria-label="GitHub">◉</a>
+          <a href="www.linkedin.com/in/isuru-sithum-0x1321a2c" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="mailto:sithumisuru059@gmail.com" aria-label="Email">✉</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <!-- Put your own image at assets/images/profile.jpg -->
+          <img src="assets/images/profile.jpeg" alt="Isuru Sithum" id="profileImage"
+               onerror="this.src='assets/images/profile-placeholder.svg'">
+        </div>
+        <div class="dream-note">Better<br>Code<br>Bigger<br>Dreams <span>⌁</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+    <section class="about-skills section">
+      <div id="about" class="about-block scroll-target">
+        <p class="section-label">ABOUT ME</p>
+        <h2>Who I Am</h2>
+        <p class="about-text">
+          I'm Isuru Sithum, a Computer Science undergraduate with a strong interest in
+          software development, problem solving and technology. I love creating meaningful
+          projects, learning new tools and collaborating with others. My goal is to build
+          solutions that make a difference.
+        </p>
+
+        <div class="details-list">
+          <div><span>▰</span><b>Education</b><em>BSc in Computer Science (Undergraduate)</em></div>
+          <div><span>⌖</span><b>Location</b><em>Galle, Sri Lanka</em></div>
+          <div><span>✉</span><b>Email</b><em>sithumisuru059@gmail.com</em></div>
+        </div>
+      </div>
+
+      <div id="skills" class="skills-block scroll-target">
+        <h2>My Skills</h2>
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="projects section scroll-target">
+      <div class="section-heading">
+        <div>
+          <p class="section-label">RECENT PROJECTS</p>
+          <h2>Featured Projects</h2>
+        </div>
+        <a href="#projects" id="viewAllProjects">View All Projects <span>→</span></a>
+      </div>
+
+      <!-- Projects are generated automatically from script.js -->
+      <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- CONTACT -->
+<section id="contact" class="contact section scroll-target">
+
+  <div class="contact-intro">
+    <p class="section-label">GET IN TOUCH</p>
+    <h2>Let's Connect</h2>
+    <p>
+      Interested in collaborating, discussing a project, or connecting professionally?
+      Feel free to reach out through any of the platforms below.
+    </p>
+  </div>
+
+  <div class="contact-details">
+
+    <!-- Email -->
+    <a href="mailto:sithumisuru059@gmail.com" class="contact-item">
+      <span>✉</span>
+      <div>
+        <b>Email</b>
+        <small>sithumisuru059@gmail.com</small>
+      </div>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+94741772319" class="contact-item">
+      <span>☎</span>
+      <div>
+        <b>Phone</b>
+        <small>+94 74 177 2319</small>
+      </div>
+    </a>
+
+    <!-- Location -->
+    <div class="contact-item">
+      <span>●</span>
+      <div>
+        <b>Location</b>
+        <small>Galle, Sri Lanka</small>
+      </div>
+    </div>
+
+    <!-- GitHub -->
+    <a
+      href="https://github.com/Isuru-Sithum"
+      target="_blank"
+      rel="noopener"
+      class="contact-item"
+    >
+      <span>◉</span>
+      <div>
+        <b>GitHub</b>
+        <small>github.com/Isuru-Sithum</small>
+      </div>
+    </a>
+
+    <!-- LinkedIn -->
+    <a
+      href="https://www.linkedin.com/in/isuru-sithum-0x1321a2c"
+      target="_blank"
+      rel="noopener"
+      class="contact-item"
+    >
+      <span>in</span>
+      <div>
+        <b>LinkedIn</b>
+        <small>linkedin.com/in/isuru-sithum-0x1321a2c</small>
+      </div>
+    </a>
+
+  </div>
+
+</section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Isuru Sithum. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="#">◉</a><a href="#">in</a><a href="#">𝕏</a><a href="mailto:your-email@example.com">✉</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
