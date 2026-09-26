@@ -31,7 +31,7 @@ const projects = [
     image: "assets/images/projects/academic-tracker.jpg",
     fallback: "assets/images/projects/project-placeholder.svg",
     tags: ["JavaScript", "HTML", "CSS"],
-    url: "https://isuru-sithum.github.io/academic_tracker/"
+    url: "https://academic-tracker-lyart.vercel.app"
   },
   /* {
     title: "Travel Journal",
