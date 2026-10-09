@@ -1,9 +1,3 @@
-// =====================================================
-// PORTFOLIO CONTENT
-// Edit this file to add, remove or change your projects.
-// =====================================================
-
-// ---------------- SKILLS ----------------
 const skills = [
   { icon: "⌘", title: "Programming Languages", text: "Python" },
   { icon: "⌬", title: "Web Development", text: "HTML, CSS" },
@@ -13,17 +7,8 @@ const skills = [
   { icon: "◌", title: "Currently Learning", text: "JavaScript, Django, Node.js" }
 ];
 
-// ---------------- PROJECTS ----------------
-// TO ADD A PROJECT:
-// Copy one object below and paste it inside this array.
-//
-// image:
-// Put your project image in assets/images/projects/
-// Example: assets/images/projects/my-new-project.jpg
-//
-// url:
-// Add a live project URL or GitHub URL. Use "#" if you don't have one yet.
-
+// Each project can list one or more links, e.g.:
+// links: [{ label: "Live Demo", url: "https://..." }, { label: "Source Code", url: "https://github.com/..." }]
 const projects = [
   {
     title: "Academic Work Tracker",
@@ -31,27 +16,12 @@ const projects = [
     image: "assets/images/projects/academic-tracker.jpg",
     fallback: "assets/images/projects/project-placeholder.svg",
     tags: ["JavaScript", "HTML", "CSS"],
-    url: "https://academic-tracker-lyart.vercel.app"
-  },
-  /* {
-    title: "Travel Journal",
-    description: "A full-stack web application for creating and managing travel stories.",
-    image: "assets/images/projects/travel-journal.jpg",
-    fallback: "assets/images/projects/project-placeholder.svg",
-    tags: ["React", "Node.js", "MongoDB"],
-    url: "#"
-  },
-  {
-    title: "AI Chatbot",
-    description: "A simple AI chatbot project using Python and natural language processing.",
-    image: "assets/images/projects/ai-chatbot.jpg",
-    fallback: "assets/images/projects/project-placeholder.svg",
-    tags: ["Python", "NLP", "Machine Learning"],
-    url: "#"
-  }*/
+    links: [
+      { label: "Live Demo", url: "https://academic-tracker-lyart.vercel.app" }
+    ]
+  }
 ];
 
-// ---------------- RENDER FUNCTIONS ----------------
 function renderSkills() {
   const grid = document.getElementById("skillsGrid");
   grid.innerHTML = skills.map(skill => `
@@ -71,8 +41,8 @@ function renderProjects() {
     return;
   }
 
-  grid.innerHTML = projects.map(project => `
-    <article class="project-card">
+  grid.innerHTML = projects.map((project, index) => `
+    <article class="project-card" data-index="${index}">
       <div class="project-image">
         <img
           src="${project.image}"
@@ -81,7 +51,6 @@ function renderProjects() {
         >
       </div>
       <div class="project-content">
-        <a class="project-link" href="${project.url}" target="_blank" rel="noopener" aria-label="Open ${project.title}">↗</a>
         <h3>${project.title}</h3>
         <p>${project.description}</p>
         <div class="tags">
@@ -90,7 +59,54 @@ function renderProjects() {
       </div>
     </article>
   `).join("");
+
+  grid.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("click", () => openProjectModal(projects[card.dataset.index]));
+  });
 }
+
+// ---------------- PROJECT MODAL ----------------
+const projectModal = document.getElementById("projectModal");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalTags = document.getElementById("modalTags");
+const modalLinks = document.getElementById("modalLinks");
+const modalClose = document.getElementById("modalClose");
+
+function openProjectModal(project) {
+  modalImage.src = project.image;
+  modalImage.alt = project.title;
+  modalImage.onerror = () => {
+    modalImage.onerror = null;
+    modalImage.src = project.fallback;
+  };
+
+  modalTitle.textContent = project.title;
+  modalDescription.textContent = project.description;
+  modalTags.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join("");
+
+  const links = project.links && project.links.length ? project.links : [{ label: "View Project", url: "#" }];
+  modalLinks.innerHTML = links.map(link => `
+    <a href="${link.url}" target="_blank" rel="noopener" class="btn btn-primary">${link.label} <span>↗</span></a>
+  `).join("");
+
+  projectModal.classList.add("open");
+  document.body.classList.add("modal-open");
+}
+
+function closeProjectModal() {
+  projectModal.classList.remove("open");
+  document.body.classList.remove("modal-open");
+}
+
+modalClose.addEventListener("click", closeProjectModal);
+projectModal.addEventListener("click", e => {
+  if (e.target === projectModal) closeProjectModal();
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") closeProjectModal();
+});
 
 // ---------------- NAVIGATION ----------------
 const sections = [...document.querySelectorAll("main section[id], .scroll-target")];
@@ -121,18 +137,12 @@ navLinks.forEach(link => link.addEventListener("click", () => {
 }));
 
 // ---------------- THEME BUTTON ----------------
-// This currently gives a small brightness toggle.
-// You can expand it into a full light theme later.
 document.getElementById("themeBtn").addEventListener("click", () => {
   document.body.classList.toggle("bright");
 });
 
-// ---------------- CONTACT SECTION ----------------
-// Contact is details-only; no backend or form handling is required.
-
 // ---------------- FOOTER YEAR ----------------
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Start page
 renderSkills();
 renderProjects();

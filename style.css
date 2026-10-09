@@ -24,6 +24,7 @@ body {
     linear-gradient(180deg, #07101c 0%, #08111e 100%);
   font-family: Inter, Arial, sans-serif;
 }
+body.modal-open { overflow: hidden; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
 
@@ -118,7 +119,7 @@ button, input, textarea { font: inherit; }
 .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .project-card {
   overflow:hidden; border:1px solid #29405f; border-radius:10px; background:var(--panel);
-  transition:.25s transform, .25s border-color;
+  transition:.25s transform, .25s border-color; cursor:pointer;
 }
 .project-card:hover { transform:translateY(-5px); border-color:#5975a4; }
 .project-image { height:120px; overflow:hidden; background:#101b2c; }
@@ -157,21 +158,35 @@ button, input, textarea { font: inherit; }
 .contact-details b { display:block; color:#c3cce0; font-size:11px; margin-bottom:4px; }
 .contact-details small { color:#8490a6; font-size:10px; overflow-wrap:anywhere; }
 .contact-item:hover b, .contact-item:hover small { color:#9db2ff; }
-.contact-form { display:grid; gap:9px; }
-.form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-input, textarea {
-  width:100%; background:#0c1727; border:1px solid #2c405d; color:var(--text);
-  border-radius:8px; padding:11px 13px; outline:none; font-size:11px;
-}
-textarea { min-height:82px; resize:vertical; }
-input:focus, textarea:focus { border-color:#667fce; }
-.contact-form .btn { justify-self:start; padding:11px 20px; border:0; }
-.form-message { margin:0; font-size:11px; color:#8ca5d8; }
 
 footer {
   min-height:54px; border-top:1px solid rgba(44,63,89,.45); padding:0 max(10vw,40px);
   display:flex; align-items:center; justify-content:space-between; color:#68758d; font-size:10px;
 }
+
+.modal-overlay {
+  position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center;
+  padding:24px; background:rgba(5,10,18,.78); backdrop-filter:blur(8px);
+}
+.modal-overlay.open { display:flex; }
+.modal-box {
+  position:relative; width:min(520px, 100%); max-height:86vh; overflow-y:auto;
+  background:var(--panel-strong); border:1px solid var(--line); border-radius:14px;
+  box-shadow:var(--shadow);
+}
+.modal-close {
+  position:absolute; top:12px; right:12px; width:30px; height:30px; border-radius:50%;
+  border:1px solid var(--line); background:rgba(10,20,34,.7); color:var(--muted);
+  font-size:17px; line-height:1; cursor:pointer; z-index:1;
+}
+.modal-close:hover { color:var(--text); border-color:#5975a4; }
+.modal-image { height:200px; overflow:hidden; background:#101b2c; border-radius:14px 14px 0 0; }
+.modal-image img { width:100%; height:100%; object-fit:cover; display:block; }
+.modal-content { padding:22px 24px 26px; }
+.modal-content h3 { margin:0 0 10px; font-size:19px; letter-spacing:-.4px; }
+.modal-content .tags { margin-bottom:14px; }
+.modal-content p { color:var(--muted); font-size:13px; line-height:1.7; margin:0 0 20px; }
+.modal-links { display:flex; gap:12px; flex-wrap:wrap; }
 
 @media (max-width: 850px) {
   .hero, .about-skills, .contact { grid-template-columns:1fr; }
@@ -197,7 +212,6 @@ footer {
   .dream-note { right:0; }
   .skills-grid, .projects-grid { grid-template-columns:1fr; }
   .section-heading { align-items:start; gap:15px; }
-  .form-row { grid-template-columns:1fr; }
   .contact-details { grid-template-columns:1fr; padding-left:0; border-left:0; }
   footer { padding:15px 22px; gap:15px; }
 }
