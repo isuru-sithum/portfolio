@@ -11,13 +11,14 @@ const skills = [
 // links: [{ label: "Live Demo", url: "https://..." }, { label: "Source Code", url: "https://github.com/..." }]
 const projects = [
   {
-    title: "Academic Work Tracker",
-    description: "A web application to manage and track academic tasks, topics and progress.",
+    title: "Folio — Academic Progress Tracker",
+    description: "A personalized academic workspace to organize courses, textbooks, and study materials, track progress, and manage study goals through interactive checklists and progress trackers. Built with HTML, CSS, JavaScript, and Supabase, Folio features secure authentication, cross-device data synchronization, and backup/restore functionality in a clean, intuitive interface.",
     image: "assets/images/projects/academic-tracker.jpg",
     fallback: "assets/images/projects/project-placeholder.svg",
     tags: ["JavaScript", "HTML", "CSS"],
     links: [
-      { label: "Live Demo", url: "https://academic-tracker-lyart.vercel.app" }
+      { label: "Live Demo", url: "https://folio-academic-tracker.vercel.app/" }
+      { label: "Source Code", url: "https://github.com/isuru-sithum/academic_tracker" }
     ]
   }
 ];
