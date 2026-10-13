@@ -21,7 +21,7 @@ const projects = [
     fallback: "assets/images/projects/project-placeholder.svg",
     tags: ["JavaScript", "HTML", "CSS"],
     links: [
-      { label: "Live Demo", url: "https://folio-academic-tracker.vercel.app/" }
+      { label: "Live Demo", url: "https://folio-academic-tracker.vercel.app/" },
       { label: "Source Code", url: "https://github.com/isuru-sithum/academic_tracker" }
     ]
   },
