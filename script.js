@@ -17,7 +17,7 @@ const projects = [
     interactive checklists and progress trackers. Built with HTML, CSS, JavaScript, 
     and Supabase, Folio features secure authentication, cross-device data 
     synchronization, and backup/restore functionality in a clean, intuitive interface.`,
-    image: "assets/images/projects/academic-tracker.jpg",
+    image: "assets/images/projects/academic-tracker.png",
     fallback: "assets/images/projects/project-placeholder.svg",
     tags: ["JavaScript", "HTML", "CSS"],
     links: [
