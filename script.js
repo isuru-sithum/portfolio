@@ -25,6 +25,22 @@ const projects = [
       { label: "Source Code", url: "https://github.com/isuru-sithum/academic_tracker" }
     ]
   },
+  {
+    title: "TradeLens — Crypto Trading Discipline Journal",
+    description: `A discipline-first trading journal that helps crypto traders see 
+    whether their results come from bad setups or broken rules. Built with React, 
+    TypeScript, and Supabase, TradeLens features secure authentication, automatic 
+    PnL and risk calculations, a pre-trade checklist with rule-adherence tracking, 
+    and an analytics dashboard comparing performance when the plan was followed 
+    versus broken.`,
+    image: "assets/images/projects/tradelens.png",
+    fallback: "assets/images/projects/project-placeholder.svg",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
+    links: [
+      { label: "Live Demo", url: "https://tradelens-tradingjournal.vercel.app/" },
+      { label: "Source Code", url: "https://github.com/isuru-sithum/tradelens" }
+    ]
+  }
 ];
 
 function renderSkills() {
